@@ -34,6 +34,7 @@ class Ip_Import_CustomController extends Mage_Adminhtml_Controller_Action
 
     protected function import_group_price()
     {
+	$table_price = Mage::getSingleton("core/resource")->getTableName('catalog_product_entity_group_price');
         $all_groups = false;
         $website_id = Mage::app()->getStore()->getWebsiteId();
         $insert = Mage::getSingleton('core/resource')->getConnection('core_write');
@@ -50,7 +51,7 @@ class Ip_Import_CustomController extends Mage_Adminhtml_Controller_Action
                 if($product && $product->getId()){
                     $entity_id = $product->getId();
                     $sql = "
-                        INSERT INTO catalog_product_entity_group_price (entity_id, all_groups, customer_group_id, value, website_id)
+                        INSERT INTO $table_price (entity_id, all_groups, customer_group_id, value, website_id)
                         VALUES ('$entity_id', '$all_groups', '$customer_group_id', '$value', '$website_id')
                         ON DUPLICATE KEY UPDATE
                             entity_id = '$entity_id',
@@ -63,7 +64,9 @@ class Ip_Import_CustomController extends Mage_Adminhtml_Controller_Action
                 }
             }
         }
-        $sql = "UPDATE `index_process` SET `status` = 'require_reindex' WHERE indexer_code='catalog_product_price'";
+
+        $table_index = Mage::getSingleton("core/resource")->getTableName('index_process');
+        $sql = "UPDATE $table_index SET `status` = 'require_reindex' WHERE indexer_code='catalog_product_price'";
         $insert->query($sql);
     }
 
