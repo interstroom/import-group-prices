@@ -1,0 +1,16 @@
+{
+    "name": "interstroom/import-group-prices",
+    "type": "magento-module",
+    "license":"OSL-3.0",
+    "description":"Simple and extensible import tool to allow you to set multiple group prices to magento products",
+    "authors":[
+        {
+            "name":"ryaan-anthony",
+            "email":"ryan@inverseparadox.net"
+        },
+        {
+            "name":"Van der Meer",
+            "email":"vandermeer@interstroom.nl"
+        }
+    ]
+}
