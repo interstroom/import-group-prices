@@ -18,7 +18,7 @@
     },
     "extra": {
         "map": [
-            ["app/design/adminhtml/default/default/templates/import", "app/design/adminhtml/default/default/templates/import"],
+            ["app/design/adminhtml/default/default/template/import", "app/design/adminhtml/default/default/template/import"],
             ["app/design/adminhtml/default/default/layout/import.xml", "app/design/adminhtml/default/default/layout/import.xml"],
             ["app/etc/modules/Ip_Import.xml", "app/etc/modules/Ip_Import.xml"],
             ["app/code/local/Ip/Import", "app/code/local/Ip/Import"]
