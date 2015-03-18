@@ -25,6 +25,11 @@
                 <class>Ip_Import_Block</class>
             </import>
         </blocks>
+        <helpers>
+            <import_custom>
+                <class>Ip_Import_Helper</class>
+            </import_custom>
+        </helpers>
     </global>
 
     <adminhtml>

@@ -6,11 +6,11 @@
             <children>
                 <convert>
                     <children>
-                        <import translate="title" module="import">
+                        <import_custom translate="title" module="import_custom">
                             <title>Import - Custom</title>
                             <action>import/custom</action>
-                            <sort_order>1</sort_order>
-                        </import>
+                            <sort_order>5</sort_order>
+                        </import_custom>
                     </children>
                 </convert>
             </children>
